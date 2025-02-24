@@ -8,8 +8,13 @@ namespace Cook_Prep
 {
     public class ArrayAlgorithims
     {
-
-        public int SequentialSearch(string[] inputarr, string value)
+        /// <summary>
+        /// Search the value of any giving string array
+        /// </summary>
+        /// <param name="inputArray">array</param>
+        /// <param name="valueToSearch">value to search</param>
+        /// <returns>Returns the position of the found value or -1 if it is not found</returns>  
+        public int SequentialSearch(string[] inputArray, string valueToSearch)
         {
             bool found = false;
 
@@ -17,9 +22,9 @@ namespace Cook_Prep
 
             int position = -1;
 
-            while (!found && i < inputarr.Length)
+            while (!found && i < inputArray.Length)
             {
-                if (inputarr[i] == value)
+                if (inputArray[i] == valueToSearch)
                 {
                     found = true;
                     position = i; break;
@@ -148,6 +153,41 @@ namespace Cook_Prep
             return lowest;
         }
 
+        
+        public int[] SelectionSort(int[] array)
+        {
+            int minIndex;
+            int minValue;
+            
+            for (int startScan = 0; startScan < array.Length - 1; startScan++)
+            {
+                minIndex = startScan;
 
+                minValue = array[minIndex];
+
+                for(int index = startScan; index < array.Length; index++)
+                {
+                    if(array[index] < minValue)
+                    {
+                        minValue = array[index];
+                        minIndex = index;
+                    }
+                }
+
+                Swap(ref array[minIndex], ref array[startScan]);
+
+            }
+
+            return array;
+        }
+
+        private void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+
+            a = b;
+
+            b = temp;
+        }
     }
 }

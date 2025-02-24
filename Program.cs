@@ -5,16 +5,16 @@ using System.Runtime.CompilerServices;
 //Console.WriteLine("Enter a word to check if it a palindrome");
 
 
+//reverse string
+string input = "Hello";
 
-//string input = Console.ReadLine();
+string output = string.Empty;
 
-//string output = string.Empty;
+for (int i = input.Length - 1; i >= 0; i--)
+{
+    output += input[i];
 
-//for (int i = input.Length -1; i >= 0; i--)
-//{
-//    output += input[i];
-
-//}
+}
 
 //if(output.ToLower() == input.ToLower())
 //{
@@ -31,7 +31,7 @@ ArrayAlgorithims utility = new ArrayAlgorithims();
 
 
 
-//string[] names = { "alain", "kire", "yoe", "alain", "pete", "kire" };
+string[] names = { "alain", "kire", "yoe", "alain", "pete", "kire" };
 
 //Console.WriteLine(utility.SequentialSearch(names, "yoe"));
 
@@ -56,5 +56,7 @@ int[] arrayDifferetn = { 1, 2, 5, 1, 9 };
 Console.WriteLine( numbers.Sum());
 Console.WriteLine(numbers.Average());
 
-Console.WriteLine(utility.FindHighest(numbers));
+Console.WriteLine(utility.SequentialSearch(names, "yoe"));
 Console.WriteLine(utility.FindLowest(numbers));
+
+Console.WriteLine(utility.SelectionSort(numbers));

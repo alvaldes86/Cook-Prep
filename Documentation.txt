@@ -1,0 +1,5 @@
+﻿Sequential sort
+	 If the number is found in the array return position
+     Else return -1
+
+
